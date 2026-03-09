@@ -1,0 +1,21 @@
+{
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map, ${capture}.*.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.jsx.map, ${capture}.*.jsx, ${capture}.d.tsx",
+    "*.ts": "${capture}.ts.map, ${capture}.*.ts, ${capture}.d.ts",
+    "*.tsx": "${capture}.tsx.map, ${capture}.*.tsx"
+  },
+  "explorer.fileNesting.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "postman.settings.dotenv-detection-notification-visibility": false
+}
