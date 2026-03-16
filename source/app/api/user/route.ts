@@ -22,6 +22,7 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   try {
+    throw new Warning("", 404);
     const { name, email, password } = await req.json();
 
     const user = await createUser(name, email, password);
