@@ -33,7 +33,10 @@ export async function findByEmail(email: string): Promise<Credentials | null> {
     .select("*")
     .eq("email", email)
     .single();
-  if (error) return null;
+  if (error) {
+    console.log(error.message);
+    return null;
+  };
   return data;
 }
 
