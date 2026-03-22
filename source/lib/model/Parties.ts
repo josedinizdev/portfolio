@@ -3,7 +3,7 @@ import { TimeStampZ } from "./globals";
 export default interface Parties {
   id: string,
   name: string,
-  entity_type: 'individual' | 'company',
+  entity_type: 'person' | 'company',
   status: 'lead' | 'qualified' | 'unqualified' |
           'contacted' | 'responded' |
           'negotiating' | 'proposal_sent' |
@@ -16,3 +16,5 @@ export default interface Parties {
   observations?: string,
   created_at: TimeStampZ
 }
+
+export type PartiesDto = Omit<Parties, "id" | "created_at">;

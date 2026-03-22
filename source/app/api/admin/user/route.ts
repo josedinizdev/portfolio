@@ -1,7 +1,8 @@
 import { Warning } from "@/lib/base/errors/Warning";
+import threat from "@/lib/base/threat";
 import { isLogged } from "@/lib/services/api/isLogged";
-import { createUser } from "@/lib/services/user/createUser";
-import { getUser } from "@/lib/services/user/getUser";
+import { createUser } from "@/lib/services/api/user/createUser";
+import { getUser } from "@/lib/services/api/user/getUser";
 import utils from "@/lib/utils";
 import { NextResponse } from "next/server";
 
@@ -12,11 +13,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json(user);
   } catch (err) {
-    if (err instanceof Warning) {
-      return NextResponse.json({ error: err }, { status: err.code });  
-    } else {
-      return NextResponse.json({ error: { name: "Erro no servidor" } }, { status: 500 });
-    }
+    return threat(err);
   }
 }
 
@@ -30,11 +27,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ token: jwt });
   } catch (err) {
-    if (err instanceof Warning) {
-      return NextResponse.json({ error: err }, { status: err.code });  
-    } else if (err instanceof Error) {
-      console.log(err.name, err.message, err.stack);
-      return NextResponse.json({ error: { name: "Erro no servidor" } }, { status: 500 });
-    }
+    return threat(err);
   }
 }

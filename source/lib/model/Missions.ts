@@ -1,6 +1,6 @@
 import { TimeStampZ } from "./globals";
 
-export default interface Mission {
+export default interface Missions {
   id: string,
   idproject: string,
   title: string,
@@ -19,3 +19,5 @@ export default interface Mission {
   estimated_cost: number,
   estimated_markup: number,
 }
+
+export type MissionsDto = Omit<Missions, "id" | "created_at">;

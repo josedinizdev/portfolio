@@ -8,3 +8,5 @@ export default interface Service {
   cost: number,
   created_at: TimeStampZ
 }
+
+export type ServiceDto = Omit<Service, "id" | "created_at">;

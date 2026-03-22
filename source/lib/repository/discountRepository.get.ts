@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Discount } from "../model";
-import { DiscountDto } from "./discountRepository";
+import { Discount, DiscountDto } from "../model";
 
 const tbdiscount = table("tbdiscount");
 

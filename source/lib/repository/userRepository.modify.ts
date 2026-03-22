@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { User } from "../model";
-import { UserDto } from "./userRepository";
+import { User, UserDto } from "../model";
 
 const tbuser = table("tbuser");
 

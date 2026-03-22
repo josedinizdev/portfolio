@@ -11,3 +11,5 @@ export default interface Project {
   total_amount: number,
   total_markup: number,
 }
+
+export type ProjectDto = Omit<Project, "id" | "created_at">;

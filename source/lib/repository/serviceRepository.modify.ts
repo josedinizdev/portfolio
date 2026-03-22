@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Service } from "../model";
-import { ServiceDto } from "./serviceRepository";
+import { Service, ServiceDto } from "../model";
 
 const tbservice = table("tbservice");
 

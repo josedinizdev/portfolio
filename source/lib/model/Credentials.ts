@@ -7,3 +7,5 @@ export default interface Credentials {
   password: string,
   created_at: TimeStampZ
 }
+
+export type CredentialsDto = Omit<Credentials, "id" | "created_at">;

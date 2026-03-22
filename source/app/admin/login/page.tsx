@@ -1,6 +1,7 @@
 
 "use client";
 
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
@@ -17,20 +18,17 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+      const res = await axios.post("/api/admin/login", {
+        email,
+        password,
       });
 
-      const data = await res.json();
-
-      if (!res.ok || !data.token) {
-        setError(data?.error?.name || "Erro ao realizar login.");
+      if (res.status != 200 || !res.data.token) {
+        setError(res.data?.error?.name || "Erro ao realizar login.");
         return;
       }
 
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token", res.data.token);
       router.push("/admin");
     } catch (err) {
       setError("Erro de conexão. Tente novamente.");
@@ -53,7 +51,7 @@ export default function AdminLoginPage() {
             <input
               type="email"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               required
               className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950/40 px-3 py-2 text-white outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
               placeholder="seu@email.com"
@@ -65,7 +63,7 @@ export default function AdminLoginPage() {
             <input
               type="password"
               value={password}
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               required
               className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950/40 px-3 py-2 text-white outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
               placeholder="••••••••"

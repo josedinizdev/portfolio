@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Attachments } from "../model";
-import { AttachmentsDto } from "./attachmentsRepository";
+import { Attachments, AttachmentsDto } from "../model";
 
 const tbattachments = table("tbattachments");
 

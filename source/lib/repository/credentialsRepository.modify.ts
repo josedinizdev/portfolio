@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Credentials } from "../model";
-import { CredentialsDto } from "./credentialsRepository";
+import { Credentials, CredentialsDto } from "../model";
 
 const tbcredentials = table("tbcredentials");
 

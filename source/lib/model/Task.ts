@@ -13,3 +13,5 @@ export default interface Task {
   date_end: TimeStampZ,
   created_at: TimeStampZ,
 }
+
+export type TaskDto = Omit<Task, "id" | "created_at">;

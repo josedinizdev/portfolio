@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Task } from "../model";
-import { TaskDto } from "./taskRepository";
+import { Task, TaskDto } from "../model";
 
 const tbtask = table("tbtask");
 

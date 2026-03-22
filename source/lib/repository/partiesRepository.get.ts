@@ -1,8 +1,7 @@
 import { table } from "../base/supabaseClient";
-import { Parties } from "../model";
-import { PartiesDto } from "./partiesRepository";
+import { Parties, PartiesDto } from "../model";
 
-const tbparties = table(" ");
+const tbparties = table("tbparties");
 
 export async function findAll(): Promise<Parties[]> {
   const { data, error } = await tbparties.select("*");

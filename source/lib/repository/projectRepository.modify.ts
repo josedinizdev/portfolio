@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Project } from "../model";
-import { ProjectDto } from "./projectRepository";
+import { Project, ProjectDto } from "../model";
 
 const tbproject = table("tbproject");
 

@@ -1,6 +1,6 @@
 import { TimeStampZ } from "./globals";
 
-export default interface Attachment {
+export default interface Attachments {
   id: string,
   type: string,
   origin: string,
@@ -9,3 +9,5 @@ export default interface Attachment {
   title: string,
   created_at: TimeStampZ
 }
+
+export type AttachmentsDto = Omit<Attachments, "id" | "created_at">;

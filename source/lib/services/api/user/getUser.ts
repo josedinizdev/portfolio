@@ -1,6 +1,5 @@
 import UserRepository from "@/lib/repository/userRepository";
 import CredentialsRepository from "@/lib/repository/credentialsRepository";
-import utils from "@/lib/utils";
 import { Warning } from "@/lib/base/errors/Warning";
 
 export async function getUser(iduser: string) {

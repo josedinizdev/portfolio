@@ -8,3 +8,5 @@ export default interface Discount {
   title: string,
   created_at: TimeStampZ
 }
+
+export type DiscountDto = Omit<Discount, "id" | "created_at">;

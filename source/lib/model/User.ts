@@ -6,3 +6,5 @@ export default interface User {
   created_at: TimeStampZ
   email?: string
 }
+
+export type UserDto = Omit<User, "id" | "created_at">;

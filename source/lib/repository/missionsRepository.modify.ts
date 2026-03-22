@@ -1,6 +1,5 @@
 import { table } from "../base/supabaseClient";
-import { Missions } from "../model";
-import { MissionsDto } from "./missionsRepository";
+import { Missions, MissionsDto } from "../model";
 
 const tbmissions = table("tbmissions");
 
